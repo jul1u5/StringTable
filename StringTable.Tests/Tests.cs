@@ -68,4 +68,42 @@ namespace StringTable.Tests
             );
         }
     }
+
+    public class Table1x2OfAliasColumns
+    {
+        class Person
+        {
+            [TableColumn]
+            public string Name { get; set; }
+
+            [TableColumn(Alias = "Children")]
+            public int ChildrenCount { get; set; }
+        }
+
+        List<Person> listOfPeople;
+
+        public Table1x2OfAliasColumns()
+        {
+            listOfPeople = new List<Person> {
+                new Person() { Name = "Peter", ChildrenCount = 3 },
+                new Person() { Name = "Bob", ChildrenCount = 2 }
+            };
+        }
+
+        [Fact]
+        public void ReturnDefaultStringTable()
+        {
+            var stringTable = listOfPeople.ToTable().ToString();
+
+            Assert.Equal(
+                string.Join(Environment.NewLine,
+                    "| Name  | Children |",
+                    "| ----- | -------- |",
+                    "| Peter | 3        |",
+                    "| Bob   | 2        |"
+                ) + Environment.NewLine,
+                stringTable
+            );
+        }
+    }
 }

@@ -51,8 +51,9 @@ namespace StringTable
                         ? item.GetType()
                         : typeof(T)
                     )
-                    .Select(prop => prop.Name)
-                    .Select(name => splitCamelCase.Replace(name, " $1$2"))
+                    .Select(prop => prop
+                        .GetCustomAttribute<TableColumnAttribute>()?.Alias
+                        ?? splitCamelCase.Replace(prop.Name, " $1$2"))
                 )
                 .Transpose()
                 .Select(columnOfProps =>

@@ -13,6 +13,7 @@ namespace StringTable
                            AllowMultiple = false)]
     public sealed class TableColumnAttribute : System.Attribute
     {
+        public string Alias { get; set; }
         public int Order { get; set; }
         public bool Include { get; set; }
         public bool Exclude { get; set; }
