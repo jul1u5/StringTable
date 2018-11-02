@@ -1,4 +1,3 @@
 # StringTable
 
-## About
-NuGet Package for formatting enumerables as string tables.
+NuGet Package for formatting enumerables to string tables.
