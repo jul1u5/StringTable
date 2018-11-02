@@ -2,25 +2,33 @@ namespace StringTable
 {
     public interface ITableFormat
     {
-        string HeadLeft { get; }
-        string HeadTopLeftCorner { get; }
+        string HeadTopLeft { get; }
         string HeadTop { get; }
         string HeadTopJunction { get; }
+        string HeadTopRight { get; }
+
+        string HeadLeft { get; }
         string HeadSeparator { get; }
-        string HeadTopRightCorner { get; }
         string HeadRight { get; }
 
-        string HorizontalSeparatorLeft { get; }
-        string HorizontalSeparator { get; }
-        string HorizontalSeparatorJunction { get; }
-        string HorizontalSeparatorRight { get; }
+        string HeadBottomLeft { get; }
+        string HeadBottom { get; }
+        string HeadBottomJunction { get; }
+        string HeadBottomRight { get; }
+
 
         string BodyLeft { get; }
-        string BodyBottomLeftCorner { get; }
+        string BodyVerticalSeparator { get; }
+        string BodyRight { get; }
+
+        string BodyLeftJunction { get; }
+        string BodyHorizontalSeparator { get; }
+        string BodyJunction { get; }
+        string BodyRightJunction { get; }
+        
+        string BodyBottomLeft { get; }
         string BodyBottom { get; }
         string BodyBottomJunction { get; }
-        string BodySeparator { get; }
-        string BodyBottomRightCorner { get; }
-        string BodyRight { get; }
+        string BodyBottomRight { get; }
     }
 }
