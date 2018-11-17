@@ -55,7 +55,7 @@ namespace StringTable.Tests
         [Fact]
         public void ReturnDefaultStringTable()
         {
-            var stringTable = list.ToTable(derived: true).ToString();
+            var stringTable = list.ToTable().ToString();
 
             Assert.Equal(
                 string.Join(Environment.NewLine,
