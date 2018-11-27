@@ -15,12 +15,13 @@ namespace StringTable
 
         public StringTable(IEnumerable<string> columns, IEnumerable<IEnumerable<object>> rows)
         {
-            Columns = columns.Select(col => col
-                .ToString()
-                .SplitCamelCase()
-            );
+            Columns = columns.Select(col => col.SplitCamelCase());
 
             Rows = rows.Select(row => row
+                .Concat(Enumerable.Repeat<object>(
+                    null, 
+                    Math.Max(Columns.Count() - row.Count(), 0))
+                )
                 .Select(cell => cell?.ToString() ?? "")
             );
         }
@@ -28,19 +29,16 @@ namespace StringTable
         public override string ToString()
         {
             int[] widths = Columns
-                .Select(col => col.ToString().Length)
+                .Select(col => col.Length)
                 .Zip(
-                    Rows.Select(row => 
-                        row.Max(cell => cell.Length)
-                    ),
+                    Rows.Transpose().Select(row => row.Max(cell => cell?.Length ?? 0)),
                     (head, rows) => Math.Max(head, rows)
                 ).ToArray();
 
             StringBuilder table = new StringBuilder();
 
             table.AppendLine(Columns
-                .Select(col => col.ToString())
-                .Select((text, index) => text.PadRight(widths[index]))
+                .Select((columnName, index) => columnName.PadRight(widths[index]))
                 .Wrap("|")
             );
 
