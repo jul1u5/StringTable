@@ -69,7 +69,7 @@ namespace StringTable.Tests
         }
     }
 
-    public class Table2x2OfDerivedObjects
+    public class Table5x2OfDerivedObjects
     {
         class Base
         {
@@ -92,7 +92,7 @@ namespace StringTable.Tests
 
         List<Base> list;
 
-        public Table2x2OfDerivedObjects()
+        public Table5x2OfDerivedObjects()
         {
             list = new List<Base> {
                 new Derived1() { BaseA = 1, BaseB = 2, Derived = 3, DerivedA = 4, DerivedA2 = 5 },
