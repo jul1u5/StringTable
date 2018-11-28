@@ -25,7 +25,7 @@ namespace StringTable
         string BodyHorizontalSeparator { get; }
         string BodyJunction { get; }
         string BodyRightJunction { get; }
-        
+
         string BodyBottomLeft { get; }
         string BodyBottom { get; }
         string BodyBottomJunction { get; }

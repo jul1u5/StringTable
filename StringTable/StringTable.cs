@@ -94,7 +94,7 @@ namespace StringTable
                     .Select((cell, i) => cell.PadLeft(widths[i]))
                     .Wrap(Format.BodyLeft, Format.BodyVerticalSeparator, Format.BodyRight)
                 )
-                .Aggregate((body, row) => 
+                .Aggregate((body, row) =>
                     body + Environment.NewLine +
                     rowSeparator +
                     row
