@@ -1,15 +1,15 @@
 namespace StringTable.Formats
 {
-    /// <summary> MySQL-like format </summary>
-    /// <example> 
+    /// <summary> Compact format </summary>
+    /// <example>
     /// <code>
     /// Example |    Test
     /// --------+--------
     ///     123 | Example
     ///     abc | Example
     /// </code>
-    /// </example> 
-    public class Compact : ITableFormat
+    /// </example>
+    internal class Compact : ITableFormat
     {
         public string HeadTopLeft { get; } = null;
         public string HeadTop { get; } = null;
@@ -22,7 +22,7 @@ namespace StringTable.Formats
 
         public string HeadBottomLeft { get; } = null;
         public string HeadBottom { get; } = "-";
-        public string HeadBottomJunction { get; } = "+";
+        public string HeadBottomJunction { get; } = "-+-";
         public string HeadBottomRight { get; } = null;
 
 

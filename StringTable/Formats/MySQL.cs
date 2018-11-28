@@ -1,31 +1,31 @@
 namespace StringTable.Formats
 {
     /// <summary> MySQL-like format </summary>
-    /// <example> 
+    /// <example>
     /// <code>
-    /// +---------+---------+
-    /// | Example |    Test |
-    /// +---------+---------+
-    /// |     123 | Example |
-    /// |     abc | Example |
-    /// +---------+---------+
+    /// +---------+----------+
+    /// | Example |     Test |
+    /// +---------+----------+
+    /// |     123 |  Example |
+    /// |     abc |  Example |
+    /// +---------+----------+
     /// </code>
-    /// </example> 
-    public class MySQL : ITableFormat
+    /// </example>
+    internal class MySQL : ITableFormat
     {
-        public string HeadTopLeft { get; } = "+";
+        public string HeadTopLeft { get; } = "+-";
         public string HeadTop { get; } = "-";
-        public string HeadTopJunction { get; } = "+";
-        public string HeadTopRight { get; } = "+";
+        public string HeadTopJunction { get; } = "-+-";
+        public string HeadTopRight { get; } = "-+";
 
         public string HeadLeft { get; } = "| ";
         public string HeadSeparator { get; } = " | ";
         public string HeadRight { get; } = " |";
 
-        public string HeadBottomLeft { get; } = "+";
+        public string HeadBottomLeft { get; } = "+-";
         public string HeadBottom { get; } = "-";
-        public string HeadBottomJunction { get; } = "+";
-        public string HeadBottomRight { get; } = "+";
+        public string HeadBottomJunction { get; } = "-+-";
+        public string HeadBottomRight { get; } = "-+";
 
 
         public string BodyLeft { get; } = "| ";
@@ -37,9 +37,9 @@ namespace StringTable.Formats
         public string BodyJunction { get; } = null;
         public string BodyRightJunction { get; } = null;
 
-        public string BodyBottomLeft { get; } = "+";
+        public string BodyBottomLeft { get; } = "+-";
         public string BodyBottom { get; } = "-";
-        public string BodyBottomJunction { get; } = "+";
-        public string BodyBottomRight { get; } = "+";
+        public string BodyBottomJunction { get; } = "-+-";
+        public string BodyBottomRight { get; } = "-+";
     }
 }

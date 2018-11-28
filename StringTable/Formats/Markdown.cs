@@ -1,15 +1,15 @@
 namespace StringTable.Formats
 {
     /// <summary> Markdown format </summary>
-    /// <example> 
+    /// <example>
     /// <code>
-    /// | Example | Test |
-    /// | ------- | ---- |
-    /// |       1 |    a |
-    /// |       2 |    b |
+    /// | Example |     Test |
+    /// | ------- | -------- |
+    /// |     123 |  Example |
+    /// |     abc |  Example |
     /// </code>
-    /// </example> 
-    public class Markdown : ITableFormat
+    /// </example>
+    internal class Markdown : ITableFormat
     {
         public string HeadTopLeft { get; } = null;
         public string HeadTop { get; } = null;
