@@ -54,7 +54,6 @@ namespace StringTable
         /// ║ Example ║    Test ║
         /// ╠═════════╬═════════╣
         /// ║     123 ║ Example ║
-        /// ╠═════════╬═════════╣
         /// ║     abc ║ Example ║
         /// ╚═════════╩═════════╝
         /// </code>
@@ -67,7 +66,6 @@ namespace StringTable
         /// │ Example │    Test │
         /// ├─────────┼─────────┤
         /// │     123 │ Example │
-        /// ├─────────┼─────────┤
         /// │     abc │ Example │
         /// └─────────┴─────────┘
         /// </code>

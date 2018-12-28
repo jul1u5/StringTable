@@ -7,7 +7,6 @@ namespace StringTable.Formats
     /// ║ Example ║    Test ║
     /// ╠═════════╬═════════╣
     /// ║     123 ║ Example ║
-    /// ╠═════════╬═════════╣
     /// ║     abc ║ Example ║
     /// ╚═════════╩═════════╝
     /// </code>
@@ -33,10 +32,10 @@ namespace StringTable.Formats
         public string BodyVerticalSeparator { get; } = " ║ ";
         public string BodyRight { get; } = " ║";
 
-        public string BodyLeftJunction { get; } = "╠═";
-        public string BodyHorizontalSeparator { get; } = "═";
-        public string BodyJunction { get; } = "═╬═";
-        public string BodyRightJunction { get; } = "═╣";
+        public string BodyLeftJunction { get; } = null;
+        public string BodyHorizontalSeparator { get; } = null;
+        public string BodyJunction { get; } = null;
+        public string BodyRightJunction { get; } = null;
 
         public string BodyBottomLeft { get; } = "╚═";
         public string BodyBottom { get; } = "═";

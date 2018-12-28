@@ -103,7 +103,6 @@ namespace StringTable.Tests
                     "║ Example ║    Test ║",
                     "╠═════════╬═════════╣",
                     "║     123 ║ Example ║",
-                    "╠═════════╬═════════╣",
                     "║     abc ║ Example ║",
                     "╚═════════╩═════════╝"
                 ) + Environment.NewLine,
@@ -122,7 +121,6 @@ namespace StringTable.Tests
                     "│ Example │    Test │",
                     "├─────────┼─────────┤",
                     "│     123 │ Example │",
-                    "├─────────┼─────────┤",
                     "│     abc │ Example │",
                     "└─────────┴─────────┘"
                 ) + Environment.NewLine,
