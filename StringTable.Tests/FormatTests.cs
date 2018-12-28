@@ -30,7 +30,7 @@ namespace StringTable.Tests
 
             Assert.Equal(
                 string.Join(Environment.NewLine,
-                    "Example |    Test",
+                    "Example |  Test  ",
                     "--------+--------",
                     "    123 | Example",
                     "    abc | Example"
@@ -46,7 +46,7 @@ namespace StringTable.Tests
 
             Assert.Equal(
                 string.Join(Environment.NewLine,
-                    "| Example |    Test |",
+                    "| Example |  Test   |",
                     "| ------- | ------- |",
                     "|     123 | Example |",
                     "|     abc | Example |"
@@ -63,7 +63,7 @@ namespace StringTable.Tests
             Assert.Equal(
                 string.Join(Environment.NewLine,
                     "+---------+---------+",
-                    "| Example |    Test |",
+                    "| Example |  Test   |",
                     "+---------+---------+",
                     "|     123 | Example |",
                     "|     abc | Example |",
@@ -81,7 +81,7 @@ namespace StringTable.Tests
             Assert.Equal(
                 string.Join(Environment.NewLine,
                     "┏━━━━━━━━━┳━━━━━━━━━┓",
-                    "┃ Example ┃    Test ┃",
+                    "┃ Example ┃  Test   ┃",
                     "┡━━━━━━━━━╇━━━━━━━━━┩",
                     "│     123 │ Example │",
                     "├─────────┼─────────┤",
@@ -100,7 +100,7 @@ namespace StringTable.Tests
             Assert.Equal(
                 string.Join(Environment.NewLine,
                     "╔═════════╦═════════╗",
-                    "║ Example ║    Test ║",
+                    "║ Example ║  Test   ║",
                     "╠═════════╬═════════╣",
                     "║     123 ║ Example ║",
                     "║     abc ║ Example ║",
@@ -118,7 +118,7 @@ namespace StringTable.Tests
             Assert.Equal(
                 string.Join(Environment.NewLine,
                     "┌─────────┬─────────┐",
-                    "│ Example │    Test │",
+                    "│ Example │  Test   │",
                     "├─────────┼─────────┤",
                     "│     123 │ Example │",
                     "│     abc │ Example │",

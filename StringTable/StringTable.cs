@@ -64,7 +64,7 @@ namespace StringTable
                 );
 
             table.AppendLine(Columns
-                .Select((col, i) => col.PadLeft(widths.ElementAt(i)))
+                .Select((col, i) => col.Center(widths.ElementAt(i)))
                 .Wrap(format.HeadLeft, format.HeadSeparator, format.HeadRight)
             );
 
