@@ -1,3 +1,61 @@
 # StringTable
 
-NuGet Package for formatting enumerables to string tables.
+[![Build Status](https://travis-ci.com/jul1u5/StringTable.svg?branch=master)](https://travis-ci.com/jul1u5/StringTable)
+[![Build status](https://ci.appveyor.com/api/projects/status/x18cnrlliw91gauc/branch/master?svg=true)](https://ci.appveyor.com/project/jul1u5/StringTable/branch/master)
+
+NuGet Package for formatting enumerables as string tables.
+
+## Examples
+
+### List
+
+```c#
+class Point
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+}
+
+var list = new List<Point> {
+    new Point() { X = 1, Y = 3 },
+    new Point() { X = 2, Y = 5 }
+};
+
+Console.WriteLine(list.ToTable());
+```
+```
+| X | Y |
+| - | - |
+| 1 | 3 |
+| 2 | 5 |
+```
+
+### Dictionary
+
+```c#
+var dict = new Dictionary<int, string> {
+    { 1, "Test" },
+    { 2, "Example" }
+};
+
+Console.WriteLine(dict.ToTable(Format.MySQL));
+```
+```
++-----+---------+
+| Key |  Value  |
++-----+---------+
+|   1 |    Test |
+|   2 | Example |
++-----+---------+
+```
+
+## Table Formats
+
+* Compact
+* Markdown
+* MySQL
+* Unicode
+* UnicodeSingle
+* UnicodeDouble
+
+[All formats with examples](https://github.com/jul1u5/StringTable/tree/master/StringTable/Formats)
