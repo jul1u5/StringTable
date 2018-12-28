@@ -51,11 +51,9 @@ Console.WriteLine(dict.ToTable(Format.MySQL));
 
 ## Table Formats
 
-* Compact
-* Markdown
-* MySQL
-* Unicode
-* UnicodeSingle
-* UnicodeDouble
-
-[All formats with examples](https://github.com/jul1u5/StringTable/tree/master/StringTable/Formats)
+* [Compact](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/Compact.cs)
+* [Markdown](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/Markdown.cs)
+* [MySQL](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/MySQL.cs)
+* [Unicode](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/Unicode.cs)
+* [UnicodeSingle](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/UnicodeSingle.cs)
+* [UnicodeDouble](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/UnicodeDouble.cs)
