@@ -1,8 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+
+    <PackageId>StringTable</PackageId>
+    <Description>Create nicely-formatted string tables from enumerables (arrays, lists)</Description>
+    <Authors>Julius Marozas</Authors>
+    <PackageTags>table;stringtable;string;generator</PackageTags>
+
+    <PackageProjectUrl>https://github.com/jul1u5/StringTable</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/jul1u5/StringTable/master/LICENSE</PackageLicenseUrl>
+    <!-- <PackageLicenseExpression>MIT</PackageLicenseExpression> -->
+    <RepositoryUrl>https://github.com/jul1u5/StringTable</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <Version>0.0.2</Version>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>7.3</LangVersion>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
   </PropertyGroup>
 
 </Project>
