@@ -40,6 +40,35 @@ namespace StringTable.Tests
         }
     }
 
+    public class Table2x2Dictionary
+    {
+        Dictionary<int, string> dict;
+
+        public Table2x2Dictionary()
+        {
+            dict = new Dictionary<int, string> {
+                { 1, "Test" },
+                { 2, "Example" }
+            };
+        }
+
+        [Fact]
+        public void ReturnDefaultStringTable()
+        {
+            var stringTable = dict.ToTable().ToString();
+
+            Assert.Equal(
+                string.Join(Environment.NewLine,
+                    "| Key |  Value  |",
+                    "| --- | ------- |",
+                    "|   1 |    Test |",
+                    "|   2 | Example |"
+                ) + Environment.NewLine,
+                stringTable
+            );
+        }
+    }
+
     public class Table2x2OfDynamicTypes
     {
         List<dynamic> list;
