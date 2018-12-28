@@ -11,7 +11,9 @@ namespace StringTable.Utilities
                     .Concat(matrix.Select(row => row.Skip(1)).Transpose())
                 : Enumerable.Empty<IEnumerable<T>>();
 
-        public static string Wrap(this IEnumerable<string> text, string sep) =>
-            $"{sep} {string.Join($" {sep} ", text)} {sep}";
+        public static string Wrap(this IEnumerable<string> enumerable, string left, string middle, string right) =>
+            left +
+            enumerable.Aggregate((acc, value) => acc + middle + value) +
+            right;
     }
 }

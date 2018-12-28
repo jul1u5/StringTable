@@ -5,7 +5,7 @@ using StringTable;
 
 namespace StringTable.Tests
 {
-    public class Table2x2OfObjects
+    public class Table2x2OfPoints
     {
         class Point
         {
@@ -13,11 +13,11 @@ namespace StringTable.Tests
             public int Y { get; set; }
         }
 
-        List<Point> listOfPoints;
+        List<Point> list;
 
-        public Table2x2OfObjects()
+        public Table2x2OfPoints()
         {
-            listOfPoints = new List<Point> {
+            list = new List<Point> {
                 new Point() { X = 1, Y = 3 },
                 new Point() { X = 2, Y = 5 }
             };
@@ -26,7 +26,7 @@ namespace StringTable.Tests
         [Fact]
         public void ReturnDefaultStringTable()
         {
-            var stringTable = listOfPoints.ToTable().ToString();
+            var stringTable = list.ToTable().ToString();
 
             Assert.Equal(
                 string.Join(Environment.NewLine,
@@ -40,11 +40,11 @@ namespace StringTable.Tests
         }
     }
 
-    public class Table2x2OfDerivedTypes
+    public class Table2x2OfDynamicTypes
     {
         List<dynamic> list;
 
-        public Table2x2OfDerivedTypes()
+        public Table2x2OfDynamicTypes()
         {
             list = new List<dynamic> {
                 new { A = 1, B = 3 },
@@ -61,8 +61,8 @@ namespace StringTable.Tests
                 string.Join(Environment.NewLine,
                     "| A/C | B/D |",
                     "| --- | --- |",
-                    "| 1   | 3   |",
-                    "| 2   | 5   |"
+                    "|   1 |   3 |",
+                    "|   2 |   5 |"
                 ) + Environment.NewLine,
                 stringTable
             );
@@ -109,8 +109,8 @@ namespace StringTable.Tests
                 string.Join(Environment.NewLine,
                     "| Base A | Base B | Derived | Derived A/Derived B | Derived A2 |",
                     "| ------ | ------ | ------- | ------------------- | ---------- |",
-                    "| 1      | 2      | 3       | 4                   | 5          |",
-                    "| 5      | 6      | 7       | 8                   |            |"
+                    "|      1 |      2 |       3 |                   4 |          5 |",
+                    "|      5 |      6 |       7 |                   8 |            |"
                 ) + Environment.NewLine,
                 stringTable
             );

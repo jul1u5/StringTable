@@ -8,5 +8,8 @@ namespace StringTable.Utilities
 
         public static string SplitCamelCase(this string camelCaseString) =>
             splitCamelCase.Replace(camelCaseString, " $1$2");
+
+        public static string Center(this string source, int totalWidth) =>
+            source.PadLeft((totalWidth + source.Length) / 2).PadRight(totalWidth);
     }
 }
