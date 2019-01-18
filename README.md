@@ -17,8 +17,8 @@ class Point
 }
 
 var list = new List<Point> {
-    new Point() { X = 1, Y = 3 },
-    new Point() { X = 2, Y = 5 }
+    new Point { X = 1, Y = 3 },
+    new Point { X = 2, Y = 5 }
 };
 
 Console.WriteLine(list.ToTable());
