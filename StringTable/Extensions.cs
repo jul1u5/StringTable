@@ -8,7 +8,7 @@ namespace StringTable
 {
     public static class Extensions
     {
-        public static StringTable ToTable<T>(this IEnumerable<T> enumerable, Format format = Format.Markdown, bool derived = true)
+        public static StringTable ToTable<T>(this IEnumerable<T> enumerable, TableFormat format, bool derived = true)
         {
             var properties = enumerable.Select(item => typeof(T)
                 .GetPropertiesForTable()

@@ -18,8 +18,8 @@ namespace StringTable.Tests
         public Table2x2()
         {
             list = new List<ExampleClass> {
-                new ExampleClass() { Example = 123, Test = "Example" },
-                new ExampleClass() { Example = "abc", Test = "Example" }
+                new ExampleClass { Example = 123, Test = "Example" },
+                new ExampleClass { Example = "abc", Test = "Example" }
             };
         }
 

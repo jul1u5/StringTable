@@ -18,15 +18,15 @@ namespace StringTable.Tests
         public Table2x2OfPoints()
         {
             list = new List<Point> {
-                new Point() { X = 1, Y = 3 },
-                new Point() { X = 2, Y = 5 }
+                new Point { X = 1, Y = 3 },
+                new Point { X = 2, Y = 5 }
             };
         }
 
         [Fact]
         public void ReturnDefaultStringTable()
         {
-            var stringTable = list.ToTable().ToString();
+            var stringTable = list.ToTable(Format.Markdown).ToString();
 
             Assert.Equal(
                 string.Join(Environment.NewLine,
@@ -55,7 +55,7 @@ namespace StringTable.Tests
         [Fact]
         public void ReturnDefaultStringTable()
         {
-            var stringTable = dict.ToTable().ToString();
+            var stringTable = dict.ToTable(Format.Markdown).ToString();
 
             Assert.Equal(
                 string.Join(Environment.NewLine,
@@ -84,7 +84,7 @@ namespace StringTable.Tests
         [Fact]
         public void ReturnDefaultStringTable()
         {
-            var stringTable = list.ToTable().ToString();
+            var stringTable = list.ToTable(Format.Markdown).ToString();
 
             Assert.Equal(
                 string.Join(Environment.NewLine,
@@ -132,7 +132,7 @@ namespace StringTable.Tests
         [Fact]
         public void ReturnDefaultStringTable()
         {
-            var stringTable = list.ToTable().ToString();
+            var stringTable = list.ToTable(Format.Markdown).ToString();
 
             Assert.Equal(
                 string.Join(Environment.NewLine,

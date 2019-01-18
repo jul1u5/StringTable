@@ -10,9 +10,7 @@ namespace StringTable
 {
     public class StringTable
     {
-        ITableFormat format;
-
-        public StringTable(IEnumerable<string> columns, IEnumerable<IEnumerable<object>> rows, Format format)
+        public StringTable(IEnumerable<string> columns, IEnumerable<IEnumerable<object>> rows, TableFormat format)
         {
             Columns = columns.Select(col => col.SplitCamelCase());
 
@@ -27,16 +25,10 @@ namespace StringTable
             Format = format;
         }
 
+        TableFormat Format { get; set; }
+
         public IEnumerable<string> Columns { get; }
         public IEnumerable<IEnumerable<string>> Rows { get; }
-
-        public Format Format
-        {
-            set
-            {
-                format = Activator.CreateInstance(Type.GetType("StringTable.Formats." + value.ToString())) as ITableFormat;
-            }
-        }
 
         public override string ToString()
         {
@@ -50,57 +42,57 @@ namespace StringTable
             var table = new StringBuilder();
 
             if (new[] {
-                    format.HeadTopLeft,
-                    format.HeadTop,
-                    format.HeadTopJunction,
-                    format.HeadTopRight,
+                    Format.HeadTopLeft,
+                    Format.HeadTop,
+                    Format.HeadTopJunction,
+                    Format.HeadTopRight,
                 }.Any(f => f != null))
                 table.AppendLine(widths
                     .Select(w => Enumerable
-                        .Repeat(format.HeadTop, w)
+                        .Repeat(Format.HeadTop, w)
                         .Aggregate((acc, str) => acc + str)
                     )
-                    .Wrap(format.HeadTopLeft, format.HeadTopJunction, format.HeadTopRight)
+                    .Wrap(Format.HeadTopLeft, Format.HeadTopJunction, Format.HeadTopRight)
                 );
 
             table.AppendLine(Columns
                 .Select((col, i) => col.Center(widths.ElementAt(i)))
-                .Wrap(format.HeadLeft, format.HeadSeparator, format.HeadRight)
+                .Wrap(Format.HeadLeft, Format.HeadSeparator, Format.HeadRight)
             );
 
             if (new[] {
-                    format.HeadBottomLeft,
-                    format.HeadBottom,
-                    format.HeadBottomJunction,
-                    format.HeadBottomRight,
+                    Format.HeadBottomLeft,
+                    Format.HeadBottom,
+                    Format.HeadBottomJunction,
+                    Format.HeadBottomRight,
                 }.Any(f => f != null))
                 table.AppendLine(widths
                     .Select(w => Enumerable
-                        .Repeat(format.HeadBottom, w)
+                        .Repeat(Format.HeadBottom, w)
                         .Aggregate((acc, str) => acc + str)
                     )
-                    .Wrap(format.HeadBottomLeft, format.HeadBottomJunction, format.HeadBottomRight)
+                    .Wrap(Format.HeadBottomLeft, Format.HeadBottomJunction, Format.HeadBottomRight)
                 );
 
             string rowSeparator = new[] {
-                format.BodyLeftJunction,
-                format.BodyHorizontalSeparator,
-                format.BodyJunction,
-                format.BodyRightJunction,
+                Format.BodyLeftJunction,
+                Format.BodyHorizontalSeparator,
+                Format.BodyJunction,
+                Format.BodyRightJunction,
             }.Any(f => f != null)
                 ? widths
                     .Select(w => Enumerable
-                        .Repeat(format.BodyHorizontalSeparator, w)
+                        .Repeat(Format.BodyHorizontalSeparator, w)
                         .Aggregate((acc, str) => acc + str)
                     )
-                    .Wrap(format.BodyLeftJunction, format.BodyJunction, format.BodyRightJunction) +
+                    .Wrap(Format.BodyLeftJunction, Format.BodyJunction, Format.BodyRightJunction) +
                     Environment.NewLine
                 : null;
 
             table.AppendLine(Rows
                 .Select(row => row
                     .Select((cell, i) => cell.PadLeft(widths.ElementAt(i)))
-                    .Wrap(format.BodyLeft, format.BodyVerticalSeparator, format.BodyRight)
+                    .Wrap(Format.BodyLeft, Format.BodyVerticalSeparator, Format.BodyRight)
                 )
                 .Aggregate((body, row) =>
                     body + Environment.NewLine +
@@ -110,17 +102,17 @@ namespace StringTable
             );
 
             if (new[] {
-                    format.BodyBottomLeft,
-                    format.BodyBottom,
-                    format.BodyBottomJunction,
-                    format.BodyBottomRight,
+                    Format.BodyBottomLeft,
+                    Format.BodyBottom,
+                    Format.BodyBottomJunction,
+                    Format.BodyBottomRight,
                 }.Any(f => f != null))
                 table.AppendLine(widths
                     .Select(w => Enumerable
-                        .Repeat(format.BodyBottom, w)
+                        .Repeat(Format.BodyBottom, w)
                         .Aggregate((acc, str) => acc + str)
                     )
-                    .Wrap(format.BodyBottomLeft, format.BodyBottomJunction, format.BodyBottomRight)
+                    .Wrap(Format.BodyBottomLeft, Format.BodyBottomJunction, Format.BodyBottomRight)
                 );
 
             return table.ToString();
