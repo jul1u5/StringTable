@@ -11,7 +11,7 @@ namespace StringTable
         ///     abc | Example
         /// </code>
         /// </example>
-        public static readonly TableFormat Compact = new TableFormat(
+        public static TableFormat Compact { get; } = new TableFormat(
             headTopLeft: null,
             headTop: null,
             headTopJunction: null,

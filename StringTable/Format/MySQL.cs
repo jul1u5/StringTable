@@ -13,7 +13,7 @@ namespace StringTable
         /// +---------+----------+
         /// </code>
         /// </example>
-        public static readonly TableFormat MySQL = new TableFormat(
+        public static TableFormat MySQL { get; } = new TableFormat(
             headTopLeft: "+-",
             headTop: "-",
             headTopJunction: "-+-",

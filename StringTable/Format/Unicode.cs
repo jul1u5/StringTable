@@ -14,7 +14,7 @@ namespace StringTable
         /// └─────────┴─────────┘
         /// </code>
         /// </example>
-        public static readonly TableFormat Unicode = new TableFormat(
+        public static TableFormat Unicode { get; } = new TableFormat(
             headTopLeft: "┏━",
             headTop: "━",
             headTopJunction: "━┳━",

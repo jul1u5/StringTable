@@ -12,7 +12,7 @@ namespace StringTable
     {
         public StringTable(IEnumerable<string> columns, IEnumerable<IEnumerable<object>> rows, TableFormat format)
         {
-            Columns = columns.Select(col => col.SplitCamelCase());
+            Columns = columns;
 
             Rows = rows.Select(row => row
                 .Concat(Enumerable.Repeat<object>(

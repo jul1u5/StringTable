@@ -11,7 +11,7 @@ namespace StringTable
         /// |     abc |  Example |
         /// </code>
         /// </example>
-        public static readonly TableFormat Markdown = new TableFormat(
+        public static TableFormat Markdown { get; } = new TableFormat(
             headTopLeft: null,
             headTop: null,
             headTopJunction: null,

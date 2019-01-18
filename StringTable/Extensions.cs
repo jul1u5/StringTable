@@ -8,7 +8,9 @@ namespace StringTable
 {
     public static class Extensions
     {
-        public static StringTable ToTable<T>(this IEnumerable<T> enumerable, TableFormat format, bool derived = true)
+        public static StringTable ToTable<T>(this IEnumerable<T> enumerable,
+            TableFormat format,
+            bool derived = true)
         {
             var properties = enumerable.Select(item => typeof(T)
                 .GetPropertiesForTable()
@@ -21,10 +23,11 @@ namespace StringTable
             );
 
             return new StringTable(
-                properties.Transpose()
+                properties
+                    .Transpose()
                     .Select(props => string.Join("/", props
-                        .Select(prop => prop?.Name)
                         .Where(col => col != null)
+                        .Select(prop => prop.Name.SplitCamelCase())
                         .Distinct()
                     )
                 ),
