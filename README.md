@@ -51,9 +51,9 @@ Console.WriteLine(dict.ToTable(Format.MySQL));
 
 ## Table Formats
 
-* [Compact](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/Compact.cs)
-* [Markdown](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/Markdown.cs)
-* [MySQL](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/MySQL.cs)
-* [Unicode](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/Unicode.cs)
-* [UnicodeSingle](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/UnicodeSingle.cs)
-* [UnicodeDouble](https://github.com/jul1u5/StringTable/blob/master/StringTable/Formats/UnicodeDouble.cs)
+* [Compact](https://github.com/jul1u5/StringTable/blob/master/StringTable/Format/Compact.cs)
+* [Markdown](https://github.com/jul1u5/StringTable/blob/master/StringTable/Format/Markdown.cs)
+* [MySQL](https://github.com/jul1u5/StringTable/blob/master/StringTable/Format/MySQL.cs)
+* [Unicode](https://github.com/jul1u5/StringTable/blob/master/StringTable/Format/Unicode.cs)
+* [UnicodeSingle](https://github.com/jul1u5/StringTable/blob/master/StringTable/Format/UnicodeSingle.cs)
+* [UnicodeDouble](https://github.com/jul1u5/StringTable/blob/master/StringTable/Format/UnicodeDouble.cs)
